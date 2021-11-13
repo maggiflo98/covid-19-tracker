@@ -4,6 +4,8 @@ import { MenuItem, FormControl, Select,Card, CardContent } from '@material-ui/co
 import Infobox from "./Infobox";
 import Map from "./Map";
 import Table from "./Table";
+import {sortData} from "./utils"
+import LineGraph from "./LineGraph";
 
 
 // https://corona.lmao.ninja/docs/#/COVID-19:%20Worldometers/get_v3_covid_19_countries__countries_
@@ -24,8 +26,9 @@ function App() {
               value: country.countryInfo.iso2,
             }
           ));
+          const sortedData=sortData(data);
           setCountries(countries)
-          setTableData(data);
+          setTableData(sortedData);
         });
     }
     getCountriesData();
@@ -95,7 +98,9 @@ const  onCountryChange = async (event) =>{
        <CardContent>
          <h3>Live cases by country</h3>
          <Table countries={tableData}/>
+        
          <h3>Worldwide cases</h3>
+         <LineGraph/>
        </CardContent>
              
      </Card>
