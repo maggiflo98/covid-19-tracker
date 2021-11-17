@@ -5,7 +5,7 @@ import Infobox from "./Infobox";
 import Map from "./Map";
 import Table from "./Table";
 import {sortData} from "./utils"
-import LineGraph from "./LineGraph";
+// import LineGraph from "./LineGraph";
 
 
 // https://corona.lmao.ninja/docs/#/COVID-19:%20Worldometers/get_v3_covid_19_countries__countries_
@@ -100,7 +100,7 @@ const  onCountryChange = async (event) =>{
          <Table countries={tableData}/>
         
          <h3>Worldwide cases</h3>
-         <LineGraph/>
+         {/* <LineGraph/> */}
        </CardContent>
              
      </Card>
